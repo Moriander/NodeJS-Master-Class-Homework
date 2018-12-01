@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
+var config = require('./config');
 
 var server = http.createServer(function (req, res) {
 
@@ -55,9 +56,9 @@ var server = http.createServer(function (req, res) {
 });
 
 // Start the server
-server.listen(3000, function () {
-    console.log("Server is running on 3000");
-})
+server.listen(config.port, function () {
+    console.log("Server is running on "+config.port);
+});
 
 // Define handlers
 var handlers = {};
